@@ -1,5 +1,5 @@
 
-modern_kelime_sozluk = {"Lol":"kahka atmak", "cringe":"utandirici"}
+modern_kelime_sozluk = {"Lol":"kahka atmak", "cringe":"utandirici","ROFL ":"bir şakaya karşılık cevap",}
 
 
 
