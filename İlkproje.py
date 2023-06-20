@@ -1,14 +1,19 @@
+import discord
+from discord.ext import commands
 
-modern_kelime_sozluk = {"Lol":"kahka atmak", "cringe":"utandirici","ROFL ":"bir şakaya karşılık cevap",}
+intents = discord.Intents.default()
+intents=discord.Intents.all()
+intents.typing = False
+intents.presences = False
+ 
+bot = commands.Bot(command_prefix='!', intents=intents)
 
+@bot.event
+async def on_ready():
+    print(f'Bot olarak giriş yapıldı: {bot.user.name}')
 
+@bot.event
+async def on_member_join(member):
+    print(f'{member.name} sunucuya katıldı. Kullanıcı ID: {member.id}')
 
-
-cevap = input("hangi kelimenin tanimini ogrenmek istiyorsun?")
-
-
-if cevap.lower() in modern_kelime_sozluk:
-    print(modern_kelime_sozluk[cevap])
-
-else:
-    print("kelime sozlukte yok")
+bot.run('T')
